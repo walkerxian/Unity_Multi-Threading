@@ -11,7 +11,7 @@ using Debug = UnityEngine.Debug;
 public class AddJobTest : MonoBehaviour
 {
 
-    public bool longRunningJob;
+    //public bool longRunningJob;
     private JobHandle handle;
     
     private NativeArray<float> result;

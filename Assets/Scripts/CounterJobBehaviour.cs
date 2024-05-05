@@ -32,7 +32,8 @@ public class CounterJobBehaviour : MonoBehaviour
         {
             numbers[i] = i + 1;
         }
-
+        
+        //赋值拷贝
         var jobData = new CounterJob
         {
             numbers = numbers,

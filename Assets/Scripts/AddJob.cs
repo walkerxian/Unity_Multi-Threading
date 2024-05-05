@@ -45,11 +45,11 @@ public class AddJobTest : MonoBehaviour
 
         handle = job.Schedule();
 
-        if (!longRunningJob)
-        {
-            handle.Complete();//wait until the job has been executed
-            Debug.Log($"result = {result[0]}");
-        }
+        // if (!longRunningJob)
+        // {
+        //     handle.Complete();//wait until the job has been executed
+        //     Debug.Log($"result = {result[0]}");
+        // }
     }
 
     private void Update()

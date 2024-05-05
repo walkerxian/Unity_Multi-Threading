@@ -13,6 +13,7 @@ public class AddJobTest : MonoBehaviour
 
     public bool longRunningJob;
     private JobHandle handle;
+    
     private NativeArray<float> result;
     
     
@@ -34,6 +35,7 @@ public class AddJobTest : MonoBehaviour
     {
         //NativeContainer requires explicit memory management
         result = new NativeArray<float>(1, Allocator.Persistent);
+        
         var job = new AddJob
         {
             a = 1,
@@ -45,7 +47,7 @@ public class AddJobTest : MonoBehaviour
 
         if (!longRunningJob)
         {
-            handle.Complete();
+            handle.Complete();//wait until the job has been executed
             Debug.Log($"result = {result[0]}");
         }
     }

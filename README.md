@@ -1,7 +1,7 @@
 # Unity_Multi-Threading
 
-### Counter
-1:   A Counter Added Based on the IJob Interface of JobSystem
-### Adder
-2:   Added an adder to the IJob interface based on the JobSystem
+### 1 Counter
+A Counter Added Based on the IJob Interface of JobSystem
+### 2 Adder
+Added an adder to the IJob interface based on the JobSystem
 

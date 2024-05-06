@@ -6,6 +6,11 @@ using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.Profiling;
 
+
+/// <summary>
+/// 在多核架构下，尽量使用IJobFor.ScheduleParallel来把任务拆分到多个核心去做并行计算
+/// 最大化程序的执行效率
+/// </summary>
 public class IJobForSample : MonoBehaviour
 {
     struct VelocityJob : IJobFor
@@ -57,6 +62,7 @@ public class IJobForSample : MonoBehaviour
         scheduleJobHandle.Complete();
         Profiler.EndSample();
         
+        //The Best method
         //run on parallel worker threads
         Profiler.BeginSample("Job.ScheduleParallel");
         JobHandle sheduleParraleJobHandle = job.ScheduleParallel(position.Length, 64, scheduleJobHandle);

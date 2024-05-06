@@ -11,6 +11,7 @@ public class IJobForSum : MonoBehaviour
     {
         public NativeArray<int> termsLeft;
         public NativeArray<int> termsRight;
+        
         public NativeArray<int> sums;
 
 
@@ -27,6 +28,7 @@ public class IJobForSum : MonoBehaviour
         int numCount = 18;
         var termsLeftData = new NativeArray<int>(numCount, Allocator.TempJob);
         var termsRightData = new NativeArray<int>(numCount, Allocator.TempJob);
+        
         var sumsData = new NativeArray<int>(numCount, Allocator.TempJob);
 
         var addJob = new AddJob()
@@ -51,7 +53,8 @@ public class IJobForSum : MonoBehaviour
         {
             Debug.Log($"Sum[{i}] = {sumsData[i]}");
         }
-
+        
+        //must be Dispose,or lead to memory leak
         termsLeftData.Dispose();
         termsRightData.Dispose();
         sumsData.Dispose();

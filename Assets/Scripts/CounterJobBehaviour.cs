@@ -6,7 +6,9 @@ public class CounterJobBehaviour : MonoBehaviour
 {
     public struct CounterJob : IJob
     {
+        //A counter that iterate through all elements in the container and sum them up.
         public NativeArray<int> numbers;
+        
         public NativeArray<int> result;
 
         public void Execute()
